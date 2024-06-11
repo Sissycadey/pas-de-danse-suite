@@ -1,0 +1,35 @@
+
+string[] moves = new string[32];
+int count = 0;
+
+// Boucle pour entrer les pas de danse
+while (count < 32)
+{
+Console.WriteLine("Entrez un pas de danse (ou tapez 'done' pour terminer) : ");
+string? usermove = Console.ReadLine();
+
+if (usermove == "done")
+{
+break;
+}
+
+moves[count] = usermove;
+count++;
+}
+
+// Demander le nombre d'itérations
+Console.WriteLine("Entrez le nombre d'itérations : ");
+int iterations = Convert.ToInt32(Console.ReadLine());
+
+// Répéter la suite de pas
+for (int i = 0; i < iterations; i++)
+{
+Console.WriteLine("Chorégraphie :");
+foreach (string usermove in moves)
+{
+if (usermove != null)
+{
+Console.WriteLine(usermove);
+}
+}
+}
